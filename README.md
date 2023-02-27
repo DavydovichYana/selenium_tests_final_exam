@@ -18,7 +18,10 @@ pip install -r requirements.txt
 После настройки скрипта запускаем из корневой папки.
 
 pytest -v --tb=line --language=en -m need_review
-
 pytest -v --tb=line --language=en
+
+Если возникает ошибка, запускаем:
+
+python -m pytest -m need_review -s -v --tb=line .\test_product_page.py
 
 Цель проекта: Итоговый проект для курса на https://stepik.org/
