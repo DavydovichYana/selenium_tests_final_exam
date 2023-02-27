@@ -2,7 +2,6 @@ from .base_page import BasePage
 from .locators import ProductPageLocators
 
 
-
 class ProductPage(BasePage):
     def should_be_add_to_basket_btn(self):
         assert self.is_element_present(*ProductPageLocators.BASKET_ADD_BTN), "Add to basket button isn't presented"
@@ -30,12 +29,12 @@ class ProductPage(BasePage):
                 names_equal = True
         assert names_equal, "Names of product isn't equal"
 
-    #проверка, что сообщение отсутствует
+    # проверка, что сообщение отсутствует
     def should_not_be_success_message(self):
         assert self.is_not_element_present(*ProductPageLocators.SUCCESS_MESSAGE, timeout=0), \
             "Success message is presented, but should not be"
 
-    #проверка, что сообщение исчезает
+    # проверка, что сообщение исчезает
     def should_disappear(self):
         assert self.is_disappeared(*ProductPageLocators.SUCCESS_MESSAGE, timeout=0), \
-            "Success message did not dasappear, but should be dasappeared"
+            "Success message did not dasappear, but should be disappeared"
